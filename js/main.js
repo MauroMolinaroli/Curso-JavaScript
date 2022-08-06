@@ -117,66 +117,37 @@ alert(salida)
 //     let numero = parseInt(prompt("ingresa un numero"))
 //     let otroNumero = parseInt(prompt("ingrese un nuevo numero"))
 
-let welcome = alert("Bienvenidos a hamburgueseria la spezia, a continuación elegi el producto que vas a llevar!");
-let menu = parseInt(prompt("Que se te antoja hoy?(Ingresa solamente el número de la opción): 1-hamburguesas, 2-acompañamiento"));
-while (menu != 1 && menu != 2) {
-    menu = parseInt(
-        prompt("Por favor escoja una opción válida. Que se te antoja hoy?(Ingresa solamente el número de la opción): 1-hamburguesa 2-acompañamiento")
-    );
-}
+// let welcome = alert("Bienvenidos a hamburgueseria la spezia, a continuación elegi el producto que vas a llevar!");
+// let menu = parseInt(prompt("Que se te antoja hoy?(Ingresa solamente el número de la opción): 1-hamburguesas, 2-acompañamiento"));
+// while (menu != 1 && menu != 2) {
+//     menu = parseInt(
+//         prompt("Por favor escoja una opción válida. Que se te antoja hoy?(Ingresa solamente el número de la opción): 1-hamburguesa 2-acompañamiento")
+//     );
+// }
 
 
+// function pedirNombre (num1, num2) {
+//     num1 = parseInt(prompt("pone un numero"))
+//     num2 = parseInt(prompt("pone otro numero forro"))
+//     alert("resultado " + num1 * num2)
+// }
 
-function pedido() {
-    switch (menu) {
-        case 1:
-            let saborHamburguesa = parseInt(
-                prompt(
-                    "que tipo de hamburguesa vas a pedir?(Ingresa solamente el número de la opción): 1-cheeseburguer, 2-crispy, 3-bbq, 4-smoked, 5-clasica."
-                )
-            );
-            if (saborHamburguesa === 1) {
-                alert("Nuestra especialidad, estará lista para retirar dentro de 60min minutos. El valor es de $850");
-                
-            } else if (saborHamburguesa === 2) {
-                alert(
-                    "Estará lista para retirar en 60 minutos. El valor es de $900"
-                );
-                
-            } else if (saborHamburguesa === 3) {
-                alert("Gran opción! La podras retirar en 60 minutos. Total a pagar: $900");
-                
-            } else if (saborHamburguesa === 4) {
-                alert("Estara lista para retirar en 60 minutos. Total a pagar: $950");
-                
-            } else if (saborHamburguesa === 5) {
-                alert("Estará lista para retirar en 60 minutos. Total a pagar: $850");
-                
-            }
-            break;
-        case 2:
-            
-            let tipoAcompañamiento = parseInt(
-                prompt(
-                    "Que acompañamiento vas a elegir?(Ingresa solamente el número de la opción): 1-porcion de papas fritas, 2-porcion de bastones de muzzarella, 3-porcion de aros de cebolla"
-                )
-            );
-            if (tipoAcompañamiento === 1) {
-                alert("las clasicas papas Mcain, no fallan. Ahora elegí la cantidad.");
-                
-            } else if (tipoAcompañamiento === 2) {
-                alert("rellenos de la muzzarella de mejor calidad. Ahora elegí la cantidad.");
-               
-            } else if (tipoAcompañamiento === 3) {
-                alert("crocantes y riquisimos aros de cebolla. Ahora elegí la cantidad");
-               
-            }
-            let cantidad = parseInt(prompt("Cuantas porciones vas a llevar? El valor por porcion es de $230"));
-    let total = cantidad * 230;
-    alert("Perfecto, estarán listas para retirar en 20 minutos. El total a pagar es de :" + total);
-    }
-    
-}
+// pedirNombre();  
 
-pedido();
+// let numero1 = 0
+// let numero2 = 0
+// let resultadoMulti = 0
+
+// function multiplicar() {
+//     numero1 = parseInt(prompt("ingresa un numero"))
+//     numero2 = parseInt(prompt("ingresa otro numero"))
+//     resultadoMulti = calcular(numero1, numero2)
+//     console.log("resultado final", resultadoMulti)
+// }
+
+// function calcular(num1, num2) {
+//     return num1 * num2
+// }
+
+
 
