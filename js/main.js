@@ -245,7 +245,7 @@ alert(salida)
 //             }
 
                              
-//             let cantidad = parseInt(prompt("porfavor elegi la cantidad de empanadas q vas a llevar "))
+            // let cantidad = parseInt(prompt("porfavor elegi la cantidad de empanadas q vas a llevar "))
 //             let total = cantidad * 300
 //             alert("en 30min estan listas, el total es " + total)
 //     }
@@ -273,16 +273,20 @@ alert(salida)
 
 // const empleado1 = new Empleado("nico", "moon", "it manager", 1995)
 // const empleado2 = new Empleado("tomas", "molinaroli", "servicio tecnico", 1996)
-
-
-// const IVA9 = 1.21
-// function Producto(nombre, precio, stock) {
-    //     this.nombre = nombre
-    //     this.precio = precio
-    //     this.stock = stock
-    //     this.precioConIVA = function(){
-        //         let precioFinal = this.precio * IVA
-        //     }
+// const IVA = 1.21
+// class Producto {
+//     constructor(nombre, precio, stock) {
+//         this.nombre = nombre
+//         this.precio = precio
+//         this.stock = stock
+//         this.precioConIVA = function () {
+//             let precioFinal = this.precio * IVA
+//             return "$" + precioFinal
+//         }
+//         this.restarStock = function (unidades) {
+//             this.stock = this.stock - unidades 
+//         }
+//     }
 // }
 
 // const producto1 = new Producto("pc asus ryzen5", 150000, 10)
@@ -297,70 +301,223 @@ alert(salida)
 // const plato1 = new Platos("rabas", 1500, "rabas fritas con limon")
 
 
-const buy = []
-const PRODUCTOS = []
-const TOBUY = []
-let rooms = 0
-let ceramica = 0
-let l = 0
-let ancho = 0
-let totalPrice = 0
+// producto1.restarStock(3)
+
+// class Producto{
+//     constructor(nombre,precio){
+//         this.nombre = nombre
+//         this.precio = precio
+//     }
+// }
+
+// let gaseosa = new Producto("gaseosa",500)
+// let alfajor = new Producto("alfajor",600)
+// let doritos = new Producto("doritos",1000)
+
+// function ingresarNombre() {
+
+//     alert("bienvenido al kiosko 24h");
+//     let nombre = prompt("ingrese su nombre");
+//     while(nombre === "" || nombre === null) {
+//         nombre = prompt("porfavor, ingrese un nombre");
+//     }
+// }
+
+// function mostrarProductos() {
+//     let producto;
+//     do {
+//         producto = parseInt(prompt("¿que llevara hoy? \n1) Gaseosa \n2) Alfajor \n3) Doritos"));
+//     }   while (producto != 1 && producto != 2 && producto != 3);
+
+//     switch(producto) {
+//         case 1: 
+//             return gaseosa
+//         case 2:
+//             return alfajor
+//         case 3:
+//             return doritos
+      
+//     }
+// }
+
+// function cobrar(producto) {
+//     alert("usted lleva el siguiente producto: " + producto.nombre + "\nPrecio $" + producto.precio);
+//     let abonar = parseInt(prompt("con cuanto paga?"));
+//     if(abonar > producto.precio) {
+//         alert("su vuelto es $" + (abonar - producto.precio));
+//     } else if(abonar === producto.precio) {
+//         alert("gracias por su compra");
+//     } else {
+//         alert("no llegas con la plata tomatela");
+//     }
+        
+    
+// }
+
+
+// ingresarNombre();
+// let productoSeleccionado = mostrarProductos();
+// cobrar(productoSeleccionado);
+
+
+// // const IVA = 1.21
+// // const paises = ["argentina", "brasil", "chile", "venezuela", "uruguay", "bolivia"];
+
+
+// // function listarPaises() {
+// //     for (let i = 0; i < paises.length; i++) {
+// //         console.log(paises[i])
+// //     }
+// // }
+// // paises.push("costa rica");
+// // paises.unshift("USA");
+// // paises.pop();
+// // let paisQuitado = paises.pop()
+
+// // function agregarPais() {
+// //     let nuevoPais = prompt("agregue un nuevo pais");
+// //         paises.push(nuevoPais)
+// // }
+
+// // function quitarPais() {
+// //     let aQuitar = prompt("ingrese el pais a quitar");
+// //     let indice = paises.indexOf(aQuitar);
+// //     let resultado = paises.splice(indice, 1);
+// //     console.log("se ha eliminado el pais ", resultado);      
+// // }
 
 
 
-class Product{
-    constructor(order, brand, price){
-        this.order = order
-        this.brand = brand
-        this.price = price
+
+
+// // agregarPais();
+// // quitarPais();
+
+const IVA = 1.21
+const productos = [];
+const carrito = [];
+class Productos {
+    constructor(id, nombre, importe) {
+        this.id = id
+        this.nombre = nombre
+        this.importe = importe
+    }
+    precioFinal() {
+        return parseFloat((this.importe * IVA).toFixed(2));
     }
 }
 
+function creoID() { return parseInt(Math.random() * 100000) }
 
-PRODUCTOS.push(new Product("A", "Lourdes", 20))
-PRODUCTOS.push(new Product("B", "San Lorenzo", 12))
-PRODUCTOS.push(new Product("C", "Cortines", 9))
-PRODUCTOS.push(new Product("D", "Cerro Negro", 27))
-PRODUCTOS.push(new Product("E", "Cañuelas", 22))
-PRODUCTOS.push(new Product("F", "Alberdi", 15))
-console.table(PRODUCTOS)
+function agregarProductos() {
+    let id = creoID();
+    let descripcion = prompt("ingresa el nombre del producto");
+    let importe = parseInt(prompt("ingresa el importe"));
 
-class Carro{
-    constructor(brand, width, height, totalMts, price){
-        this.brand = brand
-        this.width = width
-        this.height = height
-        this.totalMts = totalMts
-        this.price = price
-    }
+    productos.push(new Productos(id, descripcion, importe));
+    console.table(productos);
 }
 
-let cotizar = confirm("está buscando poner pisos de ceramica?")
-if (cotizar){
-    windows = parseInt(prompt("por favor, ingrese la cantidad de habitaciones"))
-    if(windows != NaN){
-        for(let j = 0; j < windows; j++){
-            carrito()      
-        }
-    }
-}         
+agregarProductos();
 
-function carrito(){    
-    let which = parseInt(prompt(`elija un producto:\n 1) ${PRODUCTOS[0].brand}\n 2) ${PRODUCTOS[1].brand}\n 3) ${PRODUCTOS[2].brand}\n 4) ${PRODUCTOS[3].brand}\n 5) ${PRODUCTOS[4].brand}\n 6) ${PRODUCTOS[5].brand}\n` ))
-    l = which - 1
-    let brand = PRODUCTOS[l].brand
-    let width = parseInt(prompt("ingrese el ancho de la habitacion en m²"))
-    let height = parseInt(prompt("ingrese el largo de la habitacion en m²"))
-    let totalMts = width * height
-    let precioTotal = PRODUCTOS[l].price * totalMts
-       TOBUY.push(new Carro(brand, width, height, totalMts, precioTotal))
-       console.table(TOBUY)
-}
 
-for(let t = 0;  t < TOBUY.length; t++){
-    totalPrice = TOBUY[t].price + totalPrice
-}
-alert("deberas abonar $: " + totalPrice)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const buy = []
+// const PRODUCTOS = []
+// const TOBUY = []
+// let rooms = 0
+// let ceramica = 0
+// let l = 0
+// let ancho = 0
+// let totalPrice = 0
+
+
+
+// class Product{
+//     constructor(order, brand, price){
+//         this.order = order
+//         this.brand = brand
+//         this.price = price
+//     }
+// }
+
+
+// PRODUCTOS.push(new Product("A", "Lourdes", 20))
+// PRODUCTOS.push(new Product("B", "San Lorenzo", 12))
+// PRODUCTOS.push(new Product("C", "Cortines", 9))
+// PRODUCTOS.push(new Product("D", "Cerro Negro", 27))
+// PRODUCTOS.push(new Product("E", "Cañuelas", 22))
+// PRODUCTOS.push(new Product("F", "Alberdi", 15))
+// console.table(PRODUCTOS)
+
+// class Carro{
+//     constructor(brand, width, height, totalMts, price){
+//         this.brand = brand
+//         this.width = width
+//         this.height = height
+//         this.totalMts = totalMts
+//         this.price = price
+//     }
+// }
+
+// let cotizar = confirm("está buscando poner pisos de ceramica?")
+// if (cotizar){
+//     windows = parseInt(prompt("por favor, ingrese la cantidad de habitaciones"))
+//     if(windows != NaN){
+//         for(let j = 0; j < windows; j++){
+//             carrito()      
+//         }
+//     }
+// }         
+
+// function carrito(){    
+//     let which = parseInt(prompt(`elija un producto:\n 1) ${PRODUCTOS[0].brand}\n 2) ${PRODUCTOS[1].brand}\n 3) ${PRODUCTOS[2].brand}\n 4) ${PRODUCTOS[3].brand}\n 5) ${PRODUCTOS[4].brand}\n 6) ${PRODUCTOS[5].brand}\n` ))
+//     l = which - 1
+//     let brand = PRODUCTOS[l].brand
+//     let width = parseInt(prompt("ingrese el ancho de la habitacion en m²"))
+//     let height = parseInt(prompt("ingrese el largo de la habitacion en m²"))
+//     let totalMts = width * height
+//     let precioTotal = PRODUCTOS[l].price * totalMts
+//        TOBUY.push(new Carro(brand, width, height, totalMts, precioTotal))
+//        console.table(TOBUY)
+// }
+
+// for(let t = 0;  t < TOBUY.length; t++){
+//     totalPrice = TOBUY[t].price + totalPrice
+// }
+// alert("deberas abonar $: " + totalPrice)
 
 
 
