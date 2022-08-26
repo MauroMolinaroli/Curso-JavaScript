@@ -360,164 +360,166 @@ alert(salida)
 // cobrar(productoSeleccionado);
 
 
-// // const IVA = 1.21
-// // const paises = ["argentina", "brasil", "chile", "venezuela", "uruguay", "bolivia"];
+// const IVA = 1.21
+// const paises = ["argentina", "brasil", "chile", "venezuela", "uruguay", "bolivia"];
 
 
-// // function listarPaises() {
-// //     for (let i = 0; i < paises.length; i++) {
-// //         console.log(paises[i])
-// //     }
-// // }
-// // paises.push("costa rica");
-// // paises.unshift("USA");
-// // paises.pop();
-// // let paisQuitado = paises.pop()
+// function listarPaises() {
+//     for (let i = 0; i < paises.length; i++) {
+//         console.log(paises[i])
+//     }
+// }
+// paises.push("costa rica");
+// paises.unshift("USA");
+// paises.pop();
+// let paisQuitado = paises.pop()
 
-// // function agregarPais() {
-// //     let nuevoPais = prompt("agregue un nuevo pais");
-// //         paises.push(nuevoPais)
-// // }
+// function agregarPais() {
+//     let nuevoPais = prompt("agregue un nuevo pais");
+//         paises.push(nuevoPais)
+// }
 
-// // function quitarPais() {
-// //     let aQuitar = prompt("ingrese el pais a quitar");
-// //     let indice = paises.indexOf(aQuitar);
-// //     let resultado = paises.splice(indice, 1);
-// //     console.log("se ha eliminado el pais ", resultado);      
-// // }
-
-
-
+// function quitarPais() {
+//     let aQuitar = prompt("ingrese el pais a quitar");
+//     let indice = paises.indexOf(aQuitar);
+//     let resultado = paises.splice(indice, 1);
+//     console.log("se ha eliminado el pais ", resultado);      
+// }
 
 
 // // agregarPais();
 // // quitarPais();
 
-const IVA = 1.21
-const productos = [];
-const carrito = [];
-class Productos {
-    constructor(id, nombre, importe) {
-        this.id = id
-        this.nombre = nombre
-        this.importe = importe
-    }
-    precioFinal() {
-        return parseFloat((this.importe * IVA).toFixed(2));
-    }
-}
+// const IVA = 1.21
+// const productos = [];
+// const carrito = [];
+// class Productos {
+//     constructor(id, nombre, importe) {
+//         this.id = id
+//         this.nombre = nombre
+//         this.importe = importe
+//     }
+//     precioFinal() {
+//         return parseFloat((this.importe * IVA).toFixed(2));
+//     }
+// }
 
-function creoID() { return parseInt(Math.random() * 100000) }
+// // function creoID() { return parseInt(Math.random() * 100000) }
 
-function agregarProductos() {
-    let id = creoID();
-    let descripcion = prompt("ingresa el nombre del producto");
-    let importe = parseInt(prompt("ingresa el importe"));
+// // function agregarProductos() {
+// //     let id = creoID();
+// //     let descripcion = prompt("ingresa el nombre del producto");
+// //     let importe = parseInt(prompt("ingresa el importe"));
 
-    productos.push(new Productos(id, descripcion, importe));
-    console.table(productos);
-}
+// //     productos.push(new Productos(id, descripcion, importe));
+// //     console.table(productos);
+// // }
 
-agregarProductos();
+// function generadorAutomatico() {
+//     productos.push(new Productos(1234, "notebook exo e17", 29000));
+//     productos.push(new Productos(2345, "macbook air12", 29000));
+//     productos.push(new Productos(3456, "lenovo ipad12", 29000));
+//     productos.push(new Productos(4567, "ipad pro 12", 29000));
+//     productos.push(new Productos(5678, "lenovo gamer 15", 29000));
+//     productos.push(new Productos(6789, "macbook pro 15", 29000));
+//     productos.push(new Productos(8901, "asus gaming pro 16", 29000));
+//     productos.push(new Productos(9012, "ipad mini 79", 29000));
+//     productos.push(new Productos(9123, "asus pro gaming 34", 29000));
+// }
 
+// function recorrerElementos() {
+//     for(let producto of productos) {
+//         console.table(producto);
+//     } 
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// function buscarProducto() {
+//     let prod = prompt("eliga el producto a buscar");
+//         const resultado = productos.filter(elemento => {
+//             return elemento.nombre === prod     
+//         })
+//         console.table(resultado)
+// }
 
 
 
 
+// // agregarProductos();
+// generadorAutomatico();
+// recorrerElementos();
+// buscarProducto();
+// filtrarProducto();
 
 
 
 
 
-// const buy = []
-// const PRODUCTOS = []
-// const TOBUY = []
-// let rooms = 0
-// let ceramica = 0
-// let l = 0
-// let ancho = 0
-// let totalPrice = 0
 
+// const IVA = 1.21
+// const productos = [];
+// const carrito = [];
 
-
-// class Product{
-//     constructor(order, brand, price){
-//         this.order = order
-//         this.brand = brand
+// class Productos {
+//     constructor(id, name, price) {
+//         this.id = id
+//         this.name = name
 //         this.price = price
-//     }
+//     }       
+// }
+
+// function generadorAutomatico() {
+//     productos.push(new Productos(1234, "notebook exo e17", 29000));
+//     productos.push(new Productos(2345, "macbook air12", 29000));
+//     productos.push(new Productos(3456, "macbook lenovo ipad12", 29000));
+//     productos.push(new Productos(4567, "ipad pro 12", 29000));
+//     productos.push(new Productos(5678, "notebook lenovo gamer 15", 29000));
+//     productos.push(new Productos(6789, "macbook pro 15", 29000));
+//     productos.push(new Productos(8901, "notebook asus gaming pro 16", 29000));
+//     productos.push(new Productos(9012, "ipad mini 79", 29000));
+//     productos.push(new Productos(9123, "asus pro gaming 34", 29000));
+// }
+
+// function filtrarProductos() {
+//     let prod = prompt("bienvenido a xdComputacion ¿que esta buscando?");
+//     const resultado = productos.filter (producto => {
+//         return producto.name.includes(prod);
+//     } )
+//     console.table(resultado);
+// }
+
+// function elegirProductos() {
+//     let seguir
+//     do {
+//         let prod = prompt("bien, ahora elija el producto a llevar");
+//         const resultado = productos.find (producto => {
+//             return producto.name === prod
+//         });
+//         carrito.push(resultado);
+//         seguir = confirm("desea seguir comprando?");
+//     } 
+//     while(seguir === true); 
+// }
+
+// function cobrar() {
+//     const total = carrito.map(procucto => procucto.price).reduce((prev, curr) => prev + curr, 0);
+//     alert("el precio total a pagar es $" + total * IVA);
 // }
 
 
-// PRODUCTOS.push(new Product("A", "Lourdes", 20))
-// PRODUCTOS.push(new Product("B", "San Lorenzo", 12))
-// PRODUCTOS.push(new Product("C", "Cortines", 9))
-// PRODUCTOS.push(new Product("D", "Cerro Negro", 27))
-// PRODUCTOS.push(new Product("E", "Cañuelas", 22))
-// PRODUCTOS.push(new Product("F", "Alberdi", 15))
-// console.table(PRODUCTOS)
 
-// class Carro{
-//     constructor(brand, width, height, totalMts, price){
-//         this.brand = brand
-//         this.width = width
-//         this.height = height
-//         this.totalMts = totalMts
-//         this.price = price
-//     }
-// }
+// generadorAutomatico();
+// filtrarProductos();
+// elegirProductos();
+// cobrar();
 
-// let cotizar = confirm("está buscando poner pisos de ceramica?")
-// if (cotizar){
-//     windows = parseInt(prompt("por favor, ingrese la cantidad de habitaciones"))
-//     if(windows != NaN){
-//         for(let j = 0; j < windows; j++){
-//             carrito()      
-//         }
-//     }
-// }         
 
-// function carrito(){    
-//     let which = parseInt(prompt(`elija un producto:\n 1) ${PRODUCTOS[0].brand}\n 2) ${PRODUCTOS[1].brand}\n 3) ${PRODUCTOS[2].brand}\n 4) ${PRODUCTOS[3].brand}\n 5) ${PRODUCTOS[4].brand}\n 6) ${PRODUCTOS[5].brand}\n` ))
-//     l = which - 1
-//     let brand = PRODUCTOS[l].brand
-//     let width = parseInt(prompt("ingrese el ancho de la habitacion en m²"))
-//     let height = parseInt(prompt("ingrese el largo de la habitacion en m²"))
-//     let totalMts = width * height
-//     let precioTotal = PRODUCTOS[l].price * totalMts
-//        TOBUY.push(new Carro(brand, width, height, totalMts, precioTotal))
-//        console.table(TOBUY)
-// }
 
-// for(let t = 0;  t < TOBUY.length; t++){
-//     totalPrice = TOBUY[t].price + totalPrice
-// }
-// alert("deberas abonar $: " + totalPrice)
+
+
+
+
+
+
 
 
 

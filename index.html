@@ -4,20 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./estilos/main.css">
+    <script defer src="./js/main.js"></script>
+    <script defer src="./js/other.js"></script>
+    <script defer src="./js/other2.js"></script>
+    <title>JavaScript</title>
 </head>
 <body>
-    <header>
-        <nav>
+    <h1>ComputacionX</h1>
+    <div class="container"></div>
+    <div class="carrito"></div>
 
-        </nav>
-    </header>
-    <main>
-        <h1>Curso Js</h1>
-    </main>
+
+
+    <h1 id="titulo">Curso Js</h1>
+    <p id="parrafo">carga dinamica de un array</p>
+    <article>
+        <div>
+            <label for="selectPais">Pais</label>
+            <select id="selectPais" name="selectPais" id="">
+                <option value="" selected disabled>...</option>
+                <option value="">Uruguay</option>
+                <option value="">Chile</option>
+                <option value="">Argentina</option>
+                <option value="">Perú</option>
+            </select>
+        </div>
+        <ul id="lista">
+
+        </ul>           
+    </article>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>DESCRIPCION</th>
+            <th>IMPORTE</th>
+            <th>FINAL</th>
+        </tr>
+    </thead>
+    <tbody id="cuerpo">
+        <tr>
+            <td>1234</td>
+            <td>DESCRIPCION DE MI PRODUCTO</td>
+            <td>1000.00</td>
+            <td>1210.00</td>
+        </tr>
+        <tr>
+            <td>1234</td>
+            <td>DESCRIPCION DE MI PRODUCTO</td>
+            <td>1000.00</td>
+            <td>1210.00</td>
+        </tr>
+        <tr>
+            <td>1234</td>
+            <td>DESCRIPCION DE MI PRODUCTO</td>
+            <td>1000.00</td>
+            <td>1210.00</td>
+        </tr>
+        <tr>
+            <td>1234</td>
+            <td>DESCRIPCION DE MI PRODUCTO</td>
+            <td>1000.00</td>
+            <td>1210.00</td>
+        </tr>
+    </tbody>
     <footer>
-
+            <button class="button" onclick="listarPaises()">LISTAR PAISES</button>
+            <button class="button button-grey" onclick="agregarPais()">AGREGAR PAIS</button>
+            <button class="button button-outline" onclick="buscarPais()">BUSCAR PAIS</button>
+            <button class="button button-delete" onclick="quitarPais()">QUITAR UN PAIS</button>
     </footer>
-    <script src="./js/main.js"></script>
 </body>
 </html>
